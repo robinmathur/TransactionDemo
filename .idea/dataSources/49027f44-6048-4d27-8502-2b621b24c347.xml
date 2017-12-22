@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - test@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="test">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="boardmanagement"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="securitytest"/>
+    <table id="8" parent="2" name="APPLICATION"/>
+    <table id="9" parent="2" name="CAND_GEN"/>
+    <table id="10" parent="2" name="JOB"/>
+    <table id="11" parent="2" name="PERSON"/>
+    <table id="12" parent="2" name="PERSON_ADDRESS"/>
+    <table id="13" parent="2" name="PHONE"/>
+    <table id="14" parent="2" name="USER"/>
+    <table id="15" parent="2" name="hibernate_sequence"/>
+    <column id="16" parent="8" name="APP_ID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="8" name="LONGLIST_BY">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="18" parent="8" name="CANDIDATE">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="19" parent="8" name="JOB">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="20" parent="8" name="FK_720ajxygj48uwe91pyadntqcp">
+      <ColNames>JOB</ColNames>
+    </index>
+    <index id="21" parent="8" name="FK_abmwmxh32qniofdvjkeni02ld">
+      <ColNames>CANDIDATE</ColNames>
+    </index>
+    <key id="22" parent="8" name="PRIMARY">
+      <ColNames>APP_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="23" parent="8" name="FK_abmwmxh32qniofdvjkeni02ld">
+      <ColNames>CANDIDATE</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>CAND_GEN</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>REFERENCE</RefColNames>
+    </foreign-key>
+    <foreign-key id="24" parent="8" name="FK_720ajxygj48uwe91pyadntqcp">
+      <ColNames>JOB</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>JOB</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>JOB_ID</RefColNames>
+    </foreign-key>
+    <column id="25" parent="9" name="REFERENCE">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="9" name="DEGREE">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="27" parent="9" name="PRIMARY">
+      <ColNames>REFERENCE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="10" name="JOB_ID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="10" name="JOB_TITLE">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="30" parent="10" name="PRIMARY">
+      <ColNames>JOB_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="11" name="PERSON_ID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="11" name="ADDRESS">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="33" parent="11" name="AGE">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="11" name="DOB">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="35" parent="11" name="NAME">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="36" parent="11" name="version">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="37" parent="11" name="PRIMARY">
+      <ColNames>PERSON_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="12" name="PERSON_FK">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="12" name="CITY">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="40" parent="12" name="FK_eu5ryrsa6u2yf3jge1tw3cu20">
+      <ColNames>PERSON_FK</ColNames>
+    </index>
+    <foreign-key id="41" parent="12" name="FK_eu5ryrsa6u2yf3jge1tw3cu20">
+      <ColNames>PERSON_FK</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>PERSON</RefTableName>
+      <RefColNames>PERSON_ID</RefColNames>
+    </foreign-key>
+    <column id="42" parent="13" name="PHONE_ID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="13" name="phoneModel">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="44" parent="13" name="PERSON_ID">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="45" parent="13" name="FK_co047cbqbp0c51k2fvx6fiiqp">
+      <ColNames>PERSON_ID</ColNames>
+    </index>
+    <key id="46" parent="13" name="PRIMARY">
+      <ColNames>PHONE_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="47" parent="13" name="FK_co047cbqbp0c51k2fvx6fiiqp">
+      <ColNames>PERSON_ID</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>PERSON</RefTableName>
+      <RefColNames>PERSON_ID</RefColNames>
+    </foreign-key>
+    <column id="48" parent="14" name="USER_ID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="14" name="ADDRESS">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="50" parent="14" name="AGE">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="51" parent="14" name="NAME">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="52" parent="14" name="PRIMARY">
+      <ColNames>USER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="15" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+  </database-model>
+</dataSource>
